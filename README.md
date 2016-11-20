@@ -2,6 +2,8 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.20-4.
 
+DO NOT RUN WITH NODE 7.1.0! It will fail. Instead use NVM (or similar) to run older version of node. I have found that 6.9.1 works.
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
