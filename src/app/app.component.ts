@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Player } from './models/player';
 import { JudgeService } from './services/judge.service';
 
 @Component({
@@ -8,8 +9,14 @@ import { JudgeService } from './services/judge.service';
 })
 export class AppComponent {
 
+  playerName: string;
+  result: string;
   title = 'Play Rock - Paper - Scissors!';
 
   constructor(private judgeService: JudgeService) { }
 
+  newGame(evt: Event, weapon: string) {
+    let player = Object.assign({}, {name: this.playerName}, {weapon: weapon});
+    this.judgeService.play(player);
+  }
 }

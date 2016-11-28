@@ -1,22 +1,27 @@
 <h1>
-  {{title}}
+    {{title}}
 </h1>
 
 <div>
-  <input class="rpsName" type="text">
-  <input 
-    class="rpsType" 
-    id="rock" 
-    type="button"
-    value="Rock">
-  <input 
-    class="rpsType" 
-    id="paper" 
-    type="button"
-    value="Paper">
-  <input 
-    class="rpsType" 
-    id="scissors" 
-    type="button"
-    value="Scissors">
+    <input 
+        class="rpsName" 
+        type="text">
+    <input 
+        class="rpsType" 
+        id="rock" 
+        type="button"
+        (click)="newGame($event, 'rock')" 
+        value="Rock">
+    <input 
+        class="rpsType" 
+        id="paper" 
+        type="button"
+        (click)="newGame($event, 'paper')" 
+        value="Paper">
+    <input 
+        class="rpsType" 
+        id="scissors" 
+        type="button"
+        (click)="newGame($event, 'scissors')" 
+        value="Scissors">
 </div>
