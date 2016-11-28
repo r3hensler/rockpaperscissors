@@ -1,6 +1,3 @@
-/* tslint:disable:no-unused-variable */
-
-import { Subject } from 'rxjs';
 import { JudgeService } from './judge.service';
 import { Player } from '../models/player';
 import { ROCK, PAPER, SCISSORS } from '../models/weapons';
