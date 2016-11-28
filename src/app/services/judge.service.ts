@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ComputerPlayerService } from './computer-player.service';
 import { Player } from '../models/player';
 import { ROCK, PAPER, SCISSORS, rockVersus, paperVersus, scissorsVersus } from '../models/weapons';
 
@@ -9,7 +10,7 @@ export class JudgeService {
 
     private player$ = new Subject<Player>();
 
-    constructor() {
+    constructor(private computerPlayer: ComputerPlayerService) {
         this.player$
             .take(2)
             .scan((existingPlayers, newPlayer) => {

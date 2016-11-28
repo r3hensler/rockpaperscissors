@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { JudgeService } from './services/judge.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  title = 'Play Rock - Paper - Scissors!';
+
+  constructor(private judgeService: JudgeService) { }
+
 }

@@ -1,3 +1,4 @@
+import { ComputerPlayerService } from './computer-player.service';
 import { JudgeService } from './judge.service';
 import { Player } from '../models/player';
 import { ROCK, PAPER, SCISSORS } from '../models/weapons';
@@ -13,7 +14,7 @@ describe('JudgeService', () => {
     let judgeService: JudgeService;
 
     beforeEach(() => {
-        judgeService = new JudgeService();
+        judgeService = new JudgeService(new ComputerPlayerService());
     });
 
     it('should have a play method', () => {
