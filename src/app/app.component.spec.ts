@@ -1,6 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ComputerPlayerService } from './services/computer-player.service';
 import { JudgeService } from './services/judge.service';
@@ -12,6 +13,7 @@ let fixture: any,
 describe('AppComponent', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
+            imports: [FormsModule],
             providers: [
                 ComputerPlayerService,
                 JudgeService

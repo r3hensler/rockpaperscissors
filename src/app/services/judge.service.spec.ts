@@ -54,14 +54,14 @@ describe('JudgeService', () => {
             judgeService.play(playerA);
             judgeService.play(playerB);
             let result = judgeService.determineWinner();
-            expect(result).toBe('player a wins. rock smashes scissors.');
+            expect(result).toBe('player a wins. Rock smashes scissors.');
         });
 
         it(('rock vs paper'), () => {
             judgeService.play(playerA);
             judgeService.play(playerC);
             let result = judgeService.determineWinner();
-            expect(result).toBe('player c wins. paper covers rock.');
+            expect(result).toBe('player c wins. Paper covers rock.');
         });
 
         it(('scissors vs scissors'), () => {
@@ -75,14 +75,14 @@ describe('JudgeService', () => {
             judgeService.play(playerB);
             judgeService.play(playerA);
             let result = judgeService.determineWinner();
-            expect(result).toBe('player a wins. rock smashes scissors.');
+            expect(result).toBe('player a wins. Rock smashes scissors.');
         });
 
         it(('scissors vs paper'), () => {
             judgeService.play(playerB);
             judgeService.play(playerC);
             let result = judgeService.determineWinner();
-            expect(result).toBe('player b wins. scissors cut paper.');
+            expect(result).toBe('player b wins. Scissors cut paper.');
         });
 
         it(('paper vs paper'), () => {
@@ -96,14 +96,14 @@ describe('JudgeService', () => {
             judgeService.play(playerC);
             judgeService.play(playerA);
             let result = judgeService.determineWinner();
-            expect(result).toBe('player c wins. paper covers rock.');
+            expect(result).toBe('player c wins. Paper covers rock.');
         });
 
         it(('paper vs scissors'), () => {
             judgeService.play(playerC);
             judgeService.play(playerB);
             let result = judgeService.determineWinner();
-            expect(result).toBe('player b wins. scissors cut paper.');
+            expect(result).toBe('player b wins. Scissors cut paper.');
         });
     });
 });

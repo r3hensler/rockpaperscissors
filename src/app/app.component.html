@@ -5,6 +5,7 @@
 <div>
     <input 
         class="rpsName" 
+        [(ngModel)]="playerName"
         type="text">
     <input 
         class="rpsType" 
@@ -25,3 +26,7 @@
         (click)="newGame($event, 'scissors')" 
         value="Scissors">
 </div>
+
+<h2>
+    {{result}}
+</h2>

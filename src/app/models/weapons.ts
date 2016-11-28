@@ -9,7 +9,8 @@ const drawResult = (weapon: string): string => {
 };
 
 const winLoseResult = (winner: Player, loser: Player, method: string): string => {
-    return `${winner.name} wins. ${winner.weapon} ${method} ${loser.weapon}.`;
+    let capsWeapon = winner.weapon.charAt(0).toUpperCase() + winner.weapon.slice(1);
+    return `${winner.name} wins. ${capsWeapon} ${method} ${loser.weapon}.`;
 };
 
 export const rockVersus = (playerA: Player, playerB: Player): string => {
