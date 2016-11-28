@@ -11,6 +11,7 @@ export class JudgeService {
     private player$ = new Subject<Player>();
 
     constructor(private computerPlayer: ComputerPlayerService) {
+        this.computerPlayer.options = [ROCK, PAPER, SCISSORS];
         this.player$
             .take(2)
             .scan((existingPlayers, newPlayer) => {
@@ -29,9 +30,18 @@ export class JudgeService {
         this.player$.next(player);
     }
 
-    determineWinner(playerList: Player[]): string {
-        let playerA: Player = playerList[0];
-        let playerB: Player = playerList[1];
+    playComputer() {
+        let computer: Player = {
+            name: 'Computer',
+            weapon: this.computerPlayer.answer
+        };
+
+        this.play(computer);
+    }
+
+    determineWinner(): string {
+        let playerA: Player = this.playerList[0];
+        let playerB: Player = this.playerList[1];
 
         switch (playerA.weapon) {
             case ROCK:

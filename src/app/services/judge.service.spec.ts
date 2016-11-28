@@ -36,67 +36,73 @@ describe('JudgeService', () => {
         expect(judgeService.playerList.length).toBe(2);
     });
 
+    it('should call the ComputerPlayerService to play its turn', () => {
+        expect(judgeService.playerList).toEqual([]);
+        judgeService.playComputer();
+        expect(judgeService.playerList.length).toBe(1);
+    });
+
     describe('determine the winner', () => {
         it(('rock vs rock'), () => {
             judgeService.play(playerA);
             judgeService.play(playerD);
-            let result = judgeService.determineWinner(judgeService.playerList);
+            let result = judgeService.determineWinner();
             expect(result).toBe('Draw. Both players picked rock.');
         });
 
         it(('rock vs scissors'), () => {
             judgeService.play(playerA);
             judgeService.play(playerB);
-            let result = judgeService.determineWinner(judgeService.playerList);
+            let result = judgeService.determineWinner();
             expect(result).toBe('player a wins. rock smashes scissors.');
         });
 
         it(('rock vs paper'), () => {
             judgeService.play(playerA);
             judgeService.play(playerC);
-            let result = judgeService.determineWinner(judgeService.playerList);
+            let result = judgeService.determineWinner();
             expect(result).toBe('player c wins. paper covers rock.');
         });
 
         it(('scissors vs scissors'), () => {
             judgeService.play(playerB);
             judgeService.play(playerE);
-            let result = judgeService.determineWinner(judgeService.playerList);
+            let result = judgeService.determineWinner();
             expect(result).toBe('Draw. Both players picked scissors.');
         });
 
         it(('scissors vs rock'), () => {
             judgeService.play(playerB);
             judgeService.play(playerA);
-            let result = judgeService.determineWinner(judgeService.playerList);
+            let result = judgeService.determineWinner();
             expect(result).toBe('player a wins. rock smashes scissors.');
         });
 
         it(('scissors vs paper'), () => {
             judgeService.play(playerB);
             judgeService.play(playerC);
-            let result = judgeService.determineWinner(judgeService.playerList);
+            let result = judgeService.determineWinner();
             expect(result).toBe('player b wins. scissors cut paper.');
         });
 
         it(('paper vs paper'), () => {
             judgeService.play(playerC);
             judgeService.play(playerF);
-            let result = judgeService.determineWinner(judgeService.playerList);
+            let result = judgeService.determineWinner();
             expect(result).toBe('Draw. Both players picked paper.');
         });
 
         it(('paper vs rock'), () => {
             judgeService.play(playerC);
             judgeService.play(playerA);
-            let result = judgeService.determineWinner(judgeService.playerList);
+            let result = judgeService.determineWinner();
             expect(result).toBe('player c wins. paper covers rock.');
         });
 
         it(('paper vs scissors'), () => {
             judgeService.play(playerC);
             judgeService.play(playerB);
-            let result = judgeService.determineWinner(judgeService.playerList);
+            let result = judgeService.determineWinner();
             expect(result).toBe('player b wins. scissors cut paper.');
         });
     });

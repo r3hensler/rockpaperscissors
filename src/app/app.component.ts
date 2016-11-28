@@ -16,7 +16,10 @@ export class AppComponent {
   constructor(private judgeService: JudgeService) { }
 
   newGame(evt: Event, weapon: string) {
+    evt.preventDefault();
     let player = Object.assign({}, {name: this.playerName}, {weapon: weapon});
     this.judgeService.play(player);
+    this.judgeService.playComputer();
+    this.result = this.judgeService.determineWinner();
   }
 }
